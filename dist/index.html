@@ -28,12 +28,13 @@
       if (url && url.length > 1) {
         url = url[1];
       } else {
-        url = "http://petstore.swagger.wordnik.com/v2/swagger.json";
+        url = "http://10.3.30.116:8080/v2/swagger.json";
+        // url = "http://10.3.30.116:9981/v1/test/bucket/swagger.json";
       }
       window.swaggerUi = new SwaggerUi({
         url: url,
         dom_id: "swagger-ui-container",
-        supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
+        supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'head'],
         onComplete: function(swaggerApi, swaggerUi){
           log("Loaded SwaggerUI");
           if(typeof initOAuth == "function") {
@@ -61,7 +62,8 @@
         log("key: " + key);
         if(key && key.trim() != "") {
             log("added key " + key);
-            window.authorizations.add("api_key", new ApiKeyAuthorization("api_key", key, "query"));
+            // window.authorizations.add("api_key", new ApiKeyAuthorization("api_key", key, "header", ":"));
+            // window.authorizations.add("kkk", new PasswordAuthorization("basic", "admin", "nexenta"));
         }
       }
 
@@ -71,12 +73,16 @@
 
       // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
       /*
-        var apiKey = "myApiKeyXXXX123456789";
-        $('#input_apiKey').val(apiKey);
-        addApiKeyAuthorization();
-      */
+      var apiKey = "myApiKeyXXXX123456789";
+      $('#input_apiKey').val(apiKey);
+      addApiKeyAuthorization();
+      // */
+
+      // window.authorizations.add("kkk", new PasswordAuthorization("basic", "admin", "nexenta"));
+      window.authorizations.add("kk2", new ApiKeyAuthorization("Authorization", "Basic YWRtaW46bmV4ZW50YQ==", "header", ":"));
 
       window.swaggerUi.load();
+
   });
   </script>
 </head>
