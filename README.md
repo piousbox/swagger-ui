@@ -1,5 +1,8 @@
 # Swagger UI
 
+Take a look at branch auth_2.0 - for the April 2015 stuff.
+
+
 [![Build Status](https://travis-ci.org/swagger-api/swagger-ui.svg?branch=master)](https://travis-ci.org/swagger-api/swagger-ui)
 
 Swagger UI is part of the Swagger project.  The Swagger project allows you to produce, visualize and consume your OWN RESTful services.  No proxy or 3rd party services required.  Do it your own way.
