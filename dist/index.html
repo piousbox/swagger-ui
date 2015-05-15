@@ -25,11 +25,16 @@
   <script type="text/javascript">
     $(function () {
       var url = window.location.search.match(/url=([^&]+)/);
+      console.log("url is", url);
+
       if (url && url.length > 1) {
+        console.log("HEREHERE");
+
         url = url[1];
       } else {
-        url = "http://10.3.30.116:8080/v2/swagger.json";
-        // url = "http://10.3.30.116:9981/v1/test/bucket/swagger.json";
+        console.log("Therethere");
+        // url = "http://10.3.30.116:8081/v2/swagger.json";
+        url = "http://0.0.0.0";
       }
       window.swaggerUi = new SwaggerUi({
         url: url,
@@ -82,7 +87,7 @@
       window.authorizations.add("kk2", new ApiKeyAuthorization("Authorization", "Basic YWRtaW46bmV4ZW50YQ==", "header", ":"));
 
       window.swaggerUi.load();
-
+      
   });
   </script>
 </head>
